@@ -2,34 +2,31 @@
 #include "led.h"
 #include "delay.h"
 #include "key.h"
+#include "usart.h"
 
 int main(void) {
-  u8 key_flag = 0;
-  LED_Init();        //LED初始化
-  Delay_Init();    //延时函数初始化
-  KEY_Init();
+  u16 a = 128;   //测试变量
+  double b = 9.12; //测试变量
+
+  LED_Init();     //LED初始化
+  Delay_Init();   //延时函数初始化
+  Usart_Config(); //串口初始化
+
+  LED1_OFF;
+  LED2_OFF;
+
+  printf("STM32F429串口实验\n");
+  printf("使用printf函数发送数据\n");
 
   while (1) {
-/*//    点亮LED1和LED2
     LED1_ON;
-    LED2_ON;
     Delay_ms(200);
-
-//    关闭LED1和LED2
     LED1_OFF;
-    LED2_OFF;
-    Delay_ms(200);*/
 
-    if (KEY_Scan() == KEY_ON) {
-      key_flag = ~key_flag;
-    }
-    if (key_flag == 0) {
-      LED1_ON
-      LED2_ON
-    } else {
-      LED1_OFF
-      LED2_OFF
-    }
+    printf("十进制格式：  %d\n", a);
+    printf("十六进制格式: %x\n", a);
+    printf("小数格式：    %0.2f\n", b);
+    Delay_ms(1000);
   }
 }
 
