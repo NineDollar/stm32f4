@@ -15,7 +15,7 @@
 
 // 函数：LED IO口初始化
 //
-void LED_Init(void)
+void led_init(void)
 {		
 	GPIO_InitTypeDef GPIO_InitStructure; //定义结构体
 	RCC_AHB1PeriphClockCmd ( LED1_CLK, ENABLE); 	//初始化GPIOG时钟	

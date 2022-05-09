@@ -15,15 +15,15 @@
 
 /*---------------------- LED控制宏 ------------------------*/
 
-#define LED1_ON      GPIO_ResetBits(LED1_PORT,LED1_PIN);    // 输出低电平，点亮LED1
-#define LED1_OFF      GPIO_SetBits(LED1_PORT,LED1_PIN);        // 输出高电平，关闭LED1
+#define led1_on      GPIO_ResetBits(LED1_PORT,LED1_PIN);    // 输出低电平，点亮LED1
+#define led1_off      GPIO_SetBits(LED1_PORT,LED1_PIN);        // 输出高电平，关闭LED1
 
 #define LED2_ON      GPIO_ResetBits(LED2_PORT,LED2_PIN);    // 输出低电平，点亮LED2
-#define LED2_OFF      GPIO_SetBits(LED2_PORT,LED2_PIN);        // 输出高电平，关闭LED2
+#define led2_off      GPIO_SetBits(LED2_PORT,LED2_PIN);        // 输出高电平，关闭LED2
 
 /*---------------------- 函数声明 ----------------------------*/
 
-void LED_Init(void);    //LED初始化函数
+void led_init(void);    //LED初始化函数
 
 
 #endif //__LED_H

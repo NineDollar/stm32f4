@@ -35,8 +35,8 @@ void KEY_Init(void)
 u8	KEY_Scan(void)
 {
 	if( GPIO_ReadInputDataBit ( KEY_PORT,KEY_PIN) == 0 )	//检测按键是否被按下
-	{	
-		Delay_ms(10);	//延时消抖
+	{
+      delay_ms(10);	//延时消抖
 		if(GPIO_ReadInputDataBit ( KEY_PORT,KEY_PIN) == 0)	//再次检测是否为低电平
 		{
 			while(GPIO_ReadInputDataBit ( KEY_PORT,KEY_PIN) == 0);	//等待按键放开

@@ -19,7 +19,7 @@ static __IO u32 TimingDelay;  //计数变量
 //	函数：延时初始化
 //	说明：配置 SysTick 为1ms中断，并启动定时器
 //
-void Delay_Init(void)
+void delay_init(void)
 {
 	SysTick_Config(SystemCoreClock / 1000);  //配置SysTick时钟为1ms中断
 }
@@ -39,7 +39,7 @@ void TimingDelay_Decrement(void)
 // 参数：nTime - 延时时间，单位ms
 //	说明：每次调用都会重新给TimingDelay赋值，实现 n 毫秒的延时，最大延时 4294967295 ms。	
 //
-void Delay_ms(u32 nTime)
+void delay_ms(u32 nTime)
 { 
 	TimingDelay = nTime;
 
